@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My homepage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m4r1vs/portfolio.git"
+  },
+  "author": "Marius Niveri <marius.niveri@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m4r1vs/portfolio/issues"
+  },
+  "homepage": "https://github.com/m4r1vs/portfolio#readme"
+}
