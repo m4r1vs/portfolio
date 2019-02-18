@@ -18,9 +18,11 @@ scrollChecker()
 document.querySelectorAll('.secondary-card').forEach(element => {
     element.addEventListener('mouseover', () => {
         document.documentElement.style.setProperty('--background-color', element.getAttribute("hoverColor"))
+        document.querySelector('meta[name=theme-color]').setAttribute('content', element.getAttribute("hoverColor"));
     })
     element.addEventListener('mouseout', () => {
         document.documentElement.style.removeProperty('--background-color')
+        document.querySelector('meta[name=theme-color]').setAttribute('content', '#002');
     })
 })
 
@@ -94,8 +96,6 @@ canvas.draw = function() {
     canvas.globalCompositeOperation = "lighter";
     for (var a = particles.length - 1; 0 <= a; a--) particles[a].draw(canvas)
 };
-
-document.onmousemove =
 
 canvas.mousemove = function() {
     var particle, theta, force, touch, max, i, j, n;
