@@ -1,19 +1,34 @@
 const scrollChecker = () => {
-    if (document.body.scrollTop > 128) {
+    if (document.documentElement.scrollTop > 128) {
         document.getElementById('profile-card').style.opacity = 0
+	document.getElementById("scroll-text").style.opacity = 0
     } else {
         document.getElementById('profile-card').style.opacity = 1
+	document.getElementById("scroll-text").style.opacity = 1
     }
-    if (document.body.scrollTop > 512) {
+    if (document.documentElement.scrollTop > 512) {
         document.getElementById('profile-card').style.display = 'none'
     } else {
         document.getElementById('profile-card').style.display = 'block '
     }
 }
 
+function fadeInScrollText() {
+	document.getElementById("scroll-text").style.display = "block"
+	document.getElementById("scroll-text").style.opacity = 1
+}
+
+document.getElementById("scroll-text").style.display = "none"
+setTimeout(fadeInScrollText, 500)
+
 document.addEventListener('scroll', scrollChecker)
 
 scrollChecker()
+
+document.getElementById("scroll-text").addEventListener("click", e => {
+    e.preventDefault()
+    document.getElementById("first").scrollIntoView({behavior: "smooth"})
+})
 
 document.querySelectorAll('.secondary-card').forEach(element => {
     element.addEventListener('mouseover', () => {
